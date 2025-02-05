@@ -1,0 +1,88 @@
+.header {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1;
+}
+
+.left {
+    flex: 0.5;
+    display: flex;
+    justify-content: flex-start;
+    transition: flex 0.2s ease;
+}
+
+.search {
+    flex: 1;
+    transition: margin 0.2s ease;
+    min-width: 0;
+    max-width: 800px;
+}
+
+.right {
+    transition: flex 0.2s ease;
+    flex: 0.5;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+
+    .avatar {
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .notification {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: unset;
+        width: 32px;
+        border-radius: 16px;
+        position: relative;
+
+        .badge {
+            font-size: 12px;
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 4px;
+            border: 2px solid var(--background-color);
+            border-radius: 10px;
+            background-color: var(--brand-color);
+            color: white;
+        }
+    }
+}
+
+
+/* 响应式 */
+
+@media (width <=810px) {
+    .left {
+        flex: none;
+    }
+
+    .search {
+        margin: 0 1rem;
+    }
+
+    .right {
+        flex: none;
+
+        .avatar {
+            display: none;
+        }
+
+        .notification {
+            display: none;
+        }
+    }
+}
